@@ -1,0 +1,65 @@
+{
+  "title": "Linux Troubleshooting Challenge",
+  "description": "10 mixed system and networking tasks for trainees. System + network basics with creative troubleshooting.",
+  "difficulty": "Medium",
+  "estimated_time": "90 minutes",
+  "details": {
+    "intro": "step1.md",
+    "steps": [
+      {
+        "title": "Exploring the System",
+        "text": "step1.md",
+        "verify": "test -f /tmp/explore.txt"
+      },
+      {
+        "title": "Fix the Access",
+        "text": "step2.md",
+        "verify": "sudo -u nobody test -w /opt/app/logs || echo ok | grep -q ok"
+      },
+      {
+        "title": "Broken Backup Service",
+        "text": "step3.md",
+        "verify": "systemctl is-enabled backup-agent | grep -q enabled"
+      },
+      {
+        "title": "Missing Log File",
+        "text": "step4.md",
+        "verify": "test -f /var/log/app.log"
+      },
+      {
+        "title": "Interface & IP Setup",
+        "text": "step5.md",
+        "verify": "ip -4 addr show | grep -q '192.168.56.10/24'"
+      },
+      {
+        "title": "Default Route Check",
+        "text": "step6.md",
+        "verify": "ip route | grep -q '^default via 192.168.56.1'"
+      },
+      {
+        "title": "Schedule Backup (Cron)",
+        "text": "step7.md",
+        "verify": "crontab -l | grep -q '/opt/backup.sh'"
+      },
+      {
+        "title": "Disk Usage Mystery",
+        "text": "step8.md",
+        "verify": "lsof 2>/dev/null | grep -q deleted"
+      },
+      {
+        "title": "User Stats Script",
+        "text": "step9.md",
+        "verify": "/usr/local/bin/check_users.sh 2>/dev/null | grep -q '^USERS_UID_GT_1000='"
+      },
+      {
+        "title": "Mini HTTP Server",
+        "text": "step10.md",
+        "verify": "curl -s localhost:7070 | grep -q 'Hello trainee!'"
+      }
+    ],
+    "finish": "finish.md"
+  },
+  "backend": {
+    "imageid": "ubuntu:22.04"
+  }
+}
