@@ -4,7 +4,7 @@
   "difficulty": "Medium",
   "estimated_time": "90 minutes",
   "details": {
-    "intro": "step1.md",
+    "intro": { "text": "step1.md" },
     "steps": [
       {
         "title": "Exploring the System",
@@ -57,9 +57,7 @@
         "verify": "curl -s localhost:7070 | grep -q 'Hello trainee!'"
       }
     ],
-    "finish": "finish.md"
+    "finish": { "text": "finish.md" }
   },
-  "backend": {
-    "imageid": "ubuntu"
-  }
+  "backend": { "imageid": "ubuntu" }
 }
