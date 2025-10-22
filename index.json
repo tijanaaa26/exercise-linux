@@ -60,6 +60,6 @@
     "finish": "finish.md"
   },
   "backend": {
-    "imageid": "ubuntu:22.04"
+    "imageid": "ubuntu"
   }
 }
